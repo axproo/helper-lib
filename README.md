@@ -1,4 +1,4 @@
-# Language Manager library CI4
+# Axproo Helper library
 
 **AXPROO Helper Library** fournit un ensemble de fonctions utilitaires prêtes à l’emploi pour CI4 ou PHP native.  
 Lors de l’installation, les fichiers sont automatiquement copiés dans `app/Helpers`.
