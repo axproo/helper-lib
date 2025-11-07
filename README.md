@@ -7,6 +7,17 @@ Lors de l’installation, les fichiers sont automatiquement copiés dans `app/He
 
 You can install the library via Composer:
 
+Ajouter dans votre composer.json de votre projet:
+
+```bash
+"repositories": [
+  "type": "vcs",
+  "url": "https://github.com/axproo/helper-lib.git"
+],
+```
+
+Puis exécutez:
+
 ```bash
 composer require axproo/helper-lib:dev-main
 ```
