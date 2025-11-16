@@ -8,7 +8,7 @@ use CodeIgniter\HTTP\ResponseInterface;
  */
 if (!function_exists('axprooResponse')) {
 
-    function axprooResponse(int $statusCode = 200, $message = '', array $data = []) : ResponseInterface {
+    function axprooResponse(int $statusCode = 200, $message = '', array $data = [], array $action = []) : ResponseInterface {
         $response = Services::response();
         $msg = $message;
 
@@ -18,10 +18,11 @@ if (!function_exists('axprooResponse')) {
         }
 
         $responseBody = [
-            'status' => $statusCode,
-            'message' => $msg,
-            'query' => $data,
-            'locale' => service('request')->getLocale()
+            'status'    => $statusCode,
+            'message'   => $msg,
+            'query'     => $data,
+            'action'    => $action,
+            'locale'    => service('request')->getLocale()
         ];
         return $response->setStatusCode($statusCode)->setJSON($responseBody);
     }
