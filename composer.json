@@ -2,16 +2,20 @@
     "name": "axproo/helper-lib",
     "version": "1.0.0",
     "description": "Bibliothèque Axproo des helpers réutilisables pour CI4 ou PHP native",
-    "type": "composer-plugin",
+    "type": "library",
     "require": {
         "php": "^8.1",
-        "codeigniter4/framework": "^4.5",
-        "composer-plugin-api": "^2.0"
+        "codeigniter4/framework": "^4.5"
     },
     "license": "MIT",
     "autoload": {
         "psr-4": {
             "Axproo\\HelperLib\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Axproo\\HelperLib\\Tests\\": "tests/"
         }
     },
     "authors": [
@@ -20,20 +24,17 @@
             "email": "developper@axproo.com"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "extra": {
-        "class": "Axproo\\HelperLib\\Plugin"
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        }
     },
     "scripts": {
-        "post-install-cmd": [
-            "Axproo\\HelperLib\\Installer::install"
-        ],
-        "post-update-cmd": [
-            "Axproo\\HelperLib\\Installer::install"
-        ]
+        "test": "phpunit"
     },
     "prefer-stable": true,
     "require-dev": {
-        "composer/composer": "^2.7"
+        "phpunit/phpunit": "^12.4"
     }
 }
